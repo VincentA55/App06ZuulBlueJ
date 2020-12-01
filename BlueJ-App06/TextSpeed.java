@@ -5,7 +5,7 @@
  * @author Vincent Assolutissimamente 
  * @version 01/12/2020
  */
-public class TextOut
+public class TextSpeed
 {
     public void slowText(String input)
     {
@@ -13,11 +13,12 @@ public class TextOut
 
             System.out.print(input.charAt(index));
             try {
-                Thread.sleep(70);
+                Thread.sleep(60);
             }
             catch (Exception e) {
                 e.printStackTrace();
             }
         }
+        System.out.println("");
     }
 }
