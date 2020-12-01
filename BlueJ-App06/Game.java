@@ -82,7 +82,7 @@ public class Game
             finished = processCommand(command);
         }
 
-        System.out.println("Thank you for playing.  Good bye.");
+        textSpeed.fastText("Thank you for playing.  Good bye.");
     }
 
     /**
@@ -93,9 +93,9 @@ public class Game
         System.out.println();
         textSpeed.slowText("Welcome to the World of Zuul!");
         textSpeed.slowText("World of Zuul is a new, incredibly boring adventure game.");
-        textSpeed.slowText("Type '" + CommandWord.HELP + "' if you need help.");
+        textSpeed.fastText("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println();
-        textSpeed.slowText(currentRoom.getLongDescription());
+        textSpeed.fastText(currentRoom.getLongDescription());
     }
 
     /**
@@ -139,10 +139,10 @@ public class Game
      */
     private void printHelp() 
     {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
+        textSpeed.slowText("You are lost. You are alone. You wander");
+        textSpeed.slowText("around at the university.");
         System.out.println();
-        System.out.println("Your command words are:");
+        textSpeed.fastText("Your command words are:");
         parser.showCommands();
     }
 
@@ -169,7 +169,7 @@ public class Game
         }
         else {
             currentRoom = nextRoom;
-            System.out.println(currentRoom.getLongDescription());
+            textSpeed.fastText(currentRoom.getLongDescription());
         }
     }
 
@@ -181,7 +181,7 @@ public class Game
     private boolean quit(Command command) 
     {
         if(command.hasSecondWord()) {
-            System.out.println("Quit what?");
+            textSpeed.fastText("Quit what?");
             return false;
         }
         else {

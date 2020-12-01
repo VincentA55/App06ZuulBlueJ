@@ -7,13 +7,34 @@
  */
 public class TextSpeed
 {
+    /**
+     * prints out the text with a 60ms dely
+     */
     public void slowText(String input)
     {
-        for (int index = 0; index < input.length(); index++) {
-
+        for (int index = 0; index < input.length(); index++) 
+        {
             System.out.print(input.charAt(index));
             try {
                 Thread.sleep(60);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("");
+    }
+    
+    /**
+     * prints out the text with 40ms dele
+     */
+    public void fastText(String input)
+    {
+        for (int index = 0; index < input.length(); index++) 
+        {
+            System.out.print(input.charAt(index));
+            try {
+                Thread.sleep(40);
             }
             catch (Exception e) {
                 e.printStackTrace();
