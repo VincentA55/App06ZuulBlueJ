@@ -12,8 +12,9 @@ import java.util.Iterator;
  * connected to other rooms via exits.  For each existing exit, the room 
  * stores a reference to the neighboring room.
  * 
- * @author  Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @version 01/12/2020
+ * 
+ * Modified and extended by Vincent Assolutissimamente
  */
 
 public class Room 
@@ -72,7 +73,7 @@ public class Room
     {
         String returnString = "Exits:";
         Set<String> keys = exits.keySet();
-        
+
         for(String exit : keys) 
         {
             returnString += " " + exit;

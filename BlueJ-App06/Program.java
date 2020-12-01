@@ -3,8 +3,9 @@
  * This class creates an instance of the Game
  * class and then calls on its run method.
  *
- * @author Derek Peacock
- * @version 0.1
+  * @version 01/12/2020
+ * 
+ * Modified and extended by Vincent Assolutissimamente
  */
 public class Program
 {

@@ -2,8 +2,9 @@
  * Representations for all the valid command words for the game
  * along with a string in a particular language.
  * 
- * @author  Michael Kölling and David J. Barnes
- * @version 2016.02.29
+* @version 01/12/2020
+ * 
+ * Modified and extended by Vincent Assolutissimamente
  */
 public enum CommandWord
 {
