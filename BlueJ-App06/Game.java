@@ -139,11 +139,11 @@ public class Game
      */
     private void printHelp() 
     {
-        textSpeed.slowText("You are lost. You are alone. You wander");
-        textSpeed.slowText("around at the university.");
+        textSpeed.fastText(currentRoom.getLongDescription());
         System.out.println();
         textSpeed.fastText("Your command words are:");
         parser.showCommands();
+        map();
     }
 
     /** 
@@ -187,5 +187,33 @@ public class Game
         else {
             return true;  // signal that we want to quit
         }
+    }
+    
+    /**
+     * 
+     * place holder for map item
+     */
+    private void map()
+    {
+        System.out.println();
+        System.out.println("     //________Map_________\\");
+        System.out.println("     ░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("     ░┌──┐░░┌────┐░░┌──┐░");
+        System.out.println("     ░│░░├──┤░░░░├──┤░░│░");
+        System.out.println("     ░└──┘░░└─┬┬─┘░░└──┘░");
+        System.out.println("     ░░░░░░░░░││░░░░░░░░░");
+        System.out.println("     ░┌──┐░░┌─┴┴─┐░░░░░░░");
+        System.out.println("     ░│░░├──┤░░░░│░░░░░░░");
+        System.out.println("     ░└──┘░░└─┬┬─┘░░░░░░░");
+        System.out.println("     ░░░░░░░░░││░░░░░░░░░");
+        System.out.println("     ░░░░░░░┌─┴┴─┐░░░░░░░");
+        System.out.println("     ░░░░░░░│░░░░│░░░░░░░");
+        System.out.println("     ░░░░░░░└─┬┬─┘░░░░░░░");
+        System.out.println("     ░░░░░░░░░││░░░░░░░░░");
+        System.out.println("     ░░░░░░░┌─┴┴─┐░░┌──┐░");
+        System.out.println("     ░░░░░░░│░░░░├──┤░░│░");
+        System.out.println("     ░░░░░░░└────┘░░└──┘░");
+        System.out.println("     ░░░░░░░░░░░░░░░░░░░░");
+        
     }
 }

@@ -76,7 +76,7 @@ public class Room
 
         for(String exit : keys) 
         {
-            returnString += " " + exit;
+            returnString += "|" + exit;
         }
         return returnString;
     }
