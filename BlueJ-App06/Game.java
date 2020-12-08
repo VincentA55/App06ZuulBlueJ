@@ -196,7 +196,7 @@ public class Game
     private void map()
     {
         System.out.println();
-        System.out.println("     //________Map_________\\");
+        System.out.println("     __________Map___________");
         System.out.println("     ░░░░░░░░░░░░░░░░░░░░");
         System.out.println("     ░┌──┐░░┌────┐░░┌──┐░");
         System.out.println("     ░│░░├──┤░░░░├──┤░░│░");

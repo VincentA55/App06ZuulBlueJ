@@ -26,7 +26,7 @@ public class TextSpeed
     }
     
     /**
-     * prints out the text with 40ms dele
+     * prints out the text with 40ms dely
      */
     public void fastText(String input)
     {
