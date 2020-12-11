@@ -122,6 +122,10 @@ public class Game
             case GO:
             goRoom(command);
             break;
+            
+            case USE: //testing 
+            map();
+            break;
 
             case QUIT:
             wantToQuit = quit(command);
