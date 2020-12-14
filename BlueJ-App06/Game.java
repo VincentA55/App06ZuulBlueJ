@@ -38,30 +38,43 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office;
+        Room outside,bedroom, bathroom, hallway1, hallway2, spareroom, kitchen, fridge;
 
         // create the rooms
-        outside = new Room("Outside", "outside the main entrance of the university");
-        theater = new Room("Theater", "in a lecture theater");
-        pub = new Room("Pub", "in the campus pub");
-        lab = new Room("Lab", "in a computing lab");
-        office = new Room("Office", "in the computing admin office");
+        bedroom = new Room("Bedroom", "the room that you sleep in");
+        bathroom = new Room("Bathroom", "placeholder text toiletpaper is here");
+        hallway1 = new Room("Hallway1", "the hallway outside your room, there is a dog here");
+        hallway2 = new Room("Hallway2", "leads to the spare room and kitchen");
+        spareroom = new Room("Spare room", " this is for guests");
+        kitchen = new Room("Kitchen", "food is here, hopefully");
+        fridge = new Room ("Walk in Fridge", "a walkin fridge");
+        outside = new Room("Outside", "the outside world");
 
         // initialise room exits
-        outside.setExit("east", theater);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
+        bedroom.setExit("east", bathroom);
+        bedroom.setExit("north", hallway1);
+        
+        bathroom.setExit("west", bedroom);
+        
+        hallway1.setExit("south", bedroom);
+        hallway1.setExit("north", hallway2);
+        
+        hallway2.setExit("south", hallway1);
+        hallway2.setExit("west", spareroom);
+        hallway2.setExit("north", kitchen);
+        
+        spareroom.setExit("east", hallway2);
+        
+        kitchen.setExit("east", outside);
+        kitchen.setExit("west", fridge);
+        
+        fridge.setExit("east", kitchen);
+        
+        
+        outside.setExit("west", kitchen);
+        
 
-        theater.setExit("west", outside);
-
-        pub.setExit("east", outside);
-
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
-
-        office.setExit("west", lab);
-
-        currentRoom = outside;  // start game outside
+        currentRoom = bedroom;  // start game in bedroom
     }
 
     /**
