@@ -42,4 +42,22 @@ public class TextSpeed
         }
         System.out.println("");
     }
+    
+    /**
+     * prints out the text with a 300ms dely
+     */
+    public void superSlowText(String input)
+    {
+        for (int index = 0; index < input.length(); index++) 
+        {
+            System.out.print(input.charAt(index));
+            try {
+                Thread.sleep(300);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("");
+    }
 }

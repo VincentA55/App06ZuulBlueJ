@@ -104,6 +104,10 @@ public class Game
     private void printWelcome()
     {
         System.out.println();
+        textSpeed.slowText("            ");
+        System.out.print("Loading");
+        textSpeed.superSlowText(".....");
+        textSpeed.slowText("                       ");
         textSpeed.slowText("Welcome to the World of Zuul!");
         textSpeed.slowText("World of Zuul is a new, incredibly boring adventure game.");
         textSpeed.fastText("Type '" + CommandWord.HELP + "' if you need help.");
