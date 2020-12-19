@@ -22,7 +22,7 @@ public class Room
     private String name;
     private String description;
     private HashMap<String, Room> exits;        // stores exits of this room.
-
+    private HashMap<String, Item> itemsInRoom;
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
@@ -34,8 +34,18 @@ public class Room
         this.name = name;
         this.description = description;
         exits = new HashMap<>();
+        itemsInRoom = new HashMap<>();
     }
-
+    
+    /**
+     * Sets the items for a given room 
+     * might be unneccecery
+     */
+    public void setItems(String name, Item itemInRoom)
+    {
+        itemsInRoom.put(name, itemInRoom);
+    }
+    
     /**
      * Define an exit from this room.
      * @param direction The direction of the exit.

@@ -21,6 +21,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    
     private TextSpeed textSpeed;
 
     /**
@@ -49,12 +50,17 @@ public class Game
         kitchen = new Room("Kitchen", "food is here, hopefully");
         fridge = new Room ("Walk in Fridge", "a walkin fridge");
         outside = new Room("Outside", "the outside world");
+        
+        Item toiletPaper;// creates the items 
+        
+        toiletPaper = new Item("Toilet Paper",bathroom, hallway1);
 
         // initialise room exits
         bedroom.setExit("east", bathroom);
         bedroom.setExit("north", hallway1);
         
         bathroom.setExit("west", bedroom);
+        bathroom.setItems("Toilet Paper",toiletPaper);
         
         hallway1.setExit("south", bedroom);
         hallway1.setExit("north", hallway2);
@@ -75,7 +81,12 @@ public class Game
         
 
         currentRoom = bedroom;  // start game in bedroom
+        
+        
+       
     }
+    
+    
 
     /**
      *  Main play routine.  Loops until end of play.
