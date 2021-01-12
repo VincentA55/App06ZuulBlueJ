@@ -1,14 +1,15 @@
 
 /**
- * Write a description of class Map here.
+ * This class creates the rooms and sets the
+ * items and objects within
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Vincent A.
+ * @version 12/01/2021
  */
 public class Map
 {
-    // instance variables - replace the example below with your own
-    private Room currentRoom;
+    
+    public Room currentRoom;
 
     /**
      * Create all the rooms and link their exits together.
