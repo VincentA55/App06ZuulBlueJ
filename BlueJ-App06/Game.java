@@ -8,7 +8,7 @@
  *  method.
  * 
  *  This main class creates and initialises all the others: it creates all
- *  rooms, creates the parser and starts the game.  It also evaluates and
+ *  rooms by calling on the map class, creates the parser and starts the game.  It also evaluates and
  *  executes the commands that the parser returns.
  * 
  * @author  Michael Kölling and David J. Barnes
@@ -36,10 +36,6 @@ public class Game
         parser = new Parser();
         textSpeed = new TextSpeed();
     }
-
-    
-    
-    
 
     /**
      *  Main play routine.  Loops until end of play.
@@ -174,6 +170,11 @@ public class Game
         }
     }
     
+    public Room getCurrentRoom()
+    {
+        return currentRoom;
+    }
+    
     /**
      * 
      * place holder for map item
@@ -189,9 +190,9 @@ public class Game
         System.out.println("     ░░░░░░░░░││░░░░░░░░░");
         System.out.println("     ░┌──┐░░┌─┴┴─┐░░░░░░░");
         System.out.println("     ░│░░├──┤░░░░│░░░░░░░");
-        System.out.println("     ░└──┘░░└─┬┬─┘░░░░░░░");
-        System.out.println("     ░░░░░░░░░││░░░░░░░░░");
-        System.out.println("     ░░░░░░░┌─┴┴─┐░░░░░░░");
+        System.out.println("     ░└──┘░░└─┬┬─┘░░ N ░░");
+        System.out.println("     ░░░░░░░░░││░░░W * E ░");
+        System.out.println("     ░░░░░░░┌─┴┴─┐░░ S ░░");
         System.out.println("     ░░░░░░░│░░░░│░░░░░░░");
         System.out.println("     ░░░░░░░└─┬┬─┘░░░░░░░");
         System.out.println("     ░░░░░░░░░││░░░░░░░░░");

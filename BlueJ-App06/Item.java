@@ -10,9 +10,13 @@ public class Item
 {
     private String name;
     
+    private String description;
+    
     private Room location;
     
     private Room useLocation;
+    
+    private Game game;
 
     /**
      * Constructor for objects of class Item
@@ -24,6 +28,21 @@ public class Item
         this.useLocation = useLocation;
     }
     
+    /**
+     * sets the descrpition of an item
+     */
+    public void setDescription(String description)
+    {
+        this.description = description;
+    }
+    
+    public boolean checkIfRightRoom()
+    {
+        if (game.getCurrentRoom() == useLocation){
+        return true;
+        }
+        else return false;
+    }
     
     
 

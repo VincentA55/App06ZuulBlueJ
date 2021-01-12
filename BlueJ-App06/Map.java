@@ -12,7 +12,7 @@ public class Map
     public Room currentRoom;
 
     /**
-     * Create all the rooms and link their exits together.
+     * Create all the rooms and items within and link their exits together.
      */
     public void createRooms()
     {
@@ -28,16 +28,18 @@ public class Map
         fridge = new Room ("Walk in Fridge", "a walkin fridge");
         outside = new Room("Outside", "the outside world");
         
-        Item toiletPaper;// creates the items 
+        
+        Item toiletPaper;// creates the items and sets their room
         
         toiletPaper = new Item("Toilet Paper",bathroom, hallway1);
-
+        toiletPaper.setDescription("Just your standard bog roll. Dont let your dog get a hold of it");
+        bathroom.setItems("Toilet Paper",toiletPaper);
+        
         // initialise room exits
         bedroom.setExit("east", bathroom);
         bedroom.setExit("north", hallway1);
         
         bathroom.setExit("west", bedroom);
-        bathroom.setItems("Toilet Paper",toiletPaper);
         
         hallway1.setExit("south", bedroom);
         hallway1.setExit("north", hallway2);
