@@ -21,6 +21,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    private Map houseMap;
     
     private TextSpeed textSpeed;
 
@@ -29,7 +30,7 @@ public class Game
      */
     public Game() 
     {
-        createRooms();
+        houseMap.createRooms();
         parser = new Parser();
         textSpeed = new TextSpeed();
     }
