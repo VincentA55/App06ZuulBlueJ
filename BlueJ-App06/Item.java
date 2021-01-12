@@ -36,6 +36,18 @@ public class Item
         this.description = description;
     }
     
+    /**
+     * gets the description of the item
+     */
+    public String getDescription()
+    {
+        return description;
+    }
+    
+    /**
+     * checks it the current room is the one is associated with
+     * 
+     */
     public boolean checkIfRightRoom()
     {
         if (game.getCurrentRoom() == useLocation){

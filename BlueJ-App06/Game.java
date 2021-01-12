@@ -23,7 +23,7 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Map map;
-    
+
     private TextSpeed textSpeed;
 
     /**
@@ -105,9 +105,13 @@ public class Game
             case GO:
             goRoom(command);
             break;
-            
+
             case USE: //testing 
             map();
+            break;
+
+            case LOOK:
+            //look();
             break;
 
             case QUIT:
@@ -175,12 +179,25 @@ public class Game
             return true;  // signal that we want to quit
         }
     }
-    
+
+    /**
+     * gets the current room
+     */
     public Room getCurrentRoom()
     {
         return currentRoom;
     }
     
+    /**
+     * checks the room for items and returns the description if 
+     * there is an item
+     *
+    public void look()
+    {
+        if (room.itemsInRoom
+    }
+    /
+
     /**
      * 
      * place holder for map item
@@ -206,6 +223,6 @@ public class Game
         System.out.println("     ░░░░░░░│░░░░├──┤░░│░");
         System.out.println("     ░░░░░░░└────┘░░└──┘░");
         System.out.println("     ░░░░░░░░░░░░░░░░░░░░");
-        
+
     }
 }

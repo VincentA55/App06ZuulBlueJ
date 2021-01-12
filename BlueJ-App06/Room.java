@@ -47,6 +47,17 @@ public class Room
     }
     
     /**
+     * prints out the items within the room
+     *
+    public void printItems()
+    {
+        for (Item item : itemsInRoom){
+        return item.getDescription();
+        }
+    }
+    /
+    
+    /**
      * Define an exit from this room.
      * @param direction The direction of the exit.
      * @param neighbor  The room to which the exit leads.
