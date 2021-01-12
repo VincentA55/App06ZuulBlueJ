@@ -19,14 +19,14 @@ public class Map
         Room outside,bedroom, bathroom, hallway1, hallway2, spareroom, kitchen, fridge;
 
         // create the rooms
-        bedroom = new Room("Bedroom", "the room that you sleep in");
-        bathroom = new Room("Bathroom", "placeholder text toiletpaper is here");
+        bedroom = new Room("Bedroom", "your bedroom. A simple room with a little bit too much lego");
+        bathroom = new Room("Bathroom", "the bathroom where you take your business calls. Also plenty of toilet paper");
         hallway1 = new Room("Hallway1", "the hallway outside your room, there is a dog here");
-        hallway2 = new Room("Hallway2", "leads to the spare room and kitchen");
-        spareroom = new Room("Spare room", " this is for guests");
-        kitchen = new Room("Kitchen", "food is here, hopefully");
-        fridge = new Room ("Walk in Fridge", "a walkin fridge");
-        outside = new Room("Outside", "the outside world");
+        hallway2 = new Room("Hallway2", "the same hallway? This part leads to the spare room and kitchen");
+        spareroom = new Room("Spare room", "the spare room. This is for guests");
+        kitchen = new Room("Kitchen", "your kitchen. Food is here, hopefully");
+        fridge = new Room ("Walk in Fridge", "a walkin fridge. Have you ever seen Ratatouille? Its like that");
+        outside = new Room("Outside", "the outside world, breathe it in");
         
         
         Item toiletPaper;// creates the items and sets their room

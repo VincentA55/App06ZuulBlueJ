@@ -1,3 +1,4 @@
+
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -68,8 +69,13 @@ public class Game
         System.out.print("Loading");
         textSpeed.superSlowText(".....");
         textSpeed.slowText("                       ");
-        textSpeed.slowText("Welcome to the World of Zuul!");
-        textSpeed.slowText("World of Zuul is a new, incredibly boring adventure game.");
+        textSpeed.slowText("Welcome to the World of Zuul inspired text based adventure game!");
+        textSpeed.slowText("World of Vuul is a new, incredibly boring adventure game.");
+        textSpeed.slowText("You awaken in your childhood home, you have coursework due, girl troubles, and no friends");
+        textSpeed.slowText("But most importantly, you have an empty stomach.");
+        textSpeed.fastText("Time for breakfast");
+        System.out.println();
+        textSpeed.fastText("Make your way to the kitchen and make something to eat");
         textSpeed.fastText("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println();
         textSpeed.fastText(currentRoom.getLongDescription());
