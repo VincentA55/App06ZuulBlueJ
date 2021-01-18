@@ -52,7 +52,8 @@ public class Room
     {
         Iterator<HashMap.Entry<String,Item>> it = itemsInRoom.entrySet().iterator();
         for (HashMap.Entry<String, Item> items : itemsInRoom.entrySet()){
-            System.out.println(items.getKey());
+            String item = items.getKey();
+            System.out.println(item);
         }
     }
 

@@ -1,3 +1,6 @@
+import java.util.Set;
+import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  *  This class is the main class of the "World of Zuul" application. 
@@ -23,9 +26,10 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Map map;
-
+    private Player player;
+    
     private TextSpeed textSpeed;
-
+    
     /**
      * Create the game and initialise its internal map.
      */
@@ -109,6 +113,10 @@ public class Game
             case USE: //testing 
             map();
             break;
+            
+            case TAKE:
+            takeItem(command);
+            break;
 
             case LOOK:
             look();
@@ -186,6 +194,16 @@ public class Game
     public Room getCurrentRoom()
     {
         return currentRoom;
+    }
+    
+    /**
+     * adds an item to the players inventory
+     */
+    public void takeItem(Command command)
+    {
+        String desiredItem = command.getSecondWord();
+        Item tempItem;
+        
     }
     
     /**
