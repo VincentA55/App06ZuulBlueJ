@@ -31,7 +31,7 @@ public class Map
         
         Item toiletPaper;// creates the items and sets their room
         
-        toiletPaper = new Item("Toilet Paper",bathroom, hallway1);
+        toiletPaper = new Item("Toilet Paper", hallway1);
         toiletPaper.setDescription("Just your standard bog roll. Dont let your dog get a hold of it");
         bathroom.setItems("Toilet Paper",toiletPaper);
         

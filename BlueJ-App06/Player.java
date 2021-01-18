@@ -1,4 +1,4 @@
-
+import java.util.HashMap;
 /**
  * A player class that represents the user
  * it contains the players Energy, inventory, and location
@@ -8,17 +8,18 @@
  */
 public class Player
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private int energy;
+
+    private HashMap<String, Item> inventory;
 
     /**
      * Constructor for objects of class Player
      */
     public Player()
     {
-        // initialise instance variables
-        x = 0;
+        energy = 20;
+
+        inventory = new HashMap<String, Item>();
     }
 
-    
 }

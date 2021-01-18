@@ -12,8 +12,6 @@ public class Item
     
     private String description;
     
-    private Room location;
-    
     private Room useLocation;
     
     private Game game;
@@ -21,10 +19,10 @@ public class Item
     /**
      * Constructor for objects of class Item
      */
-    public Item(String name, Room location, Room useLocation)
+    public Item(String name,Room useLocation)
     {
         this.name = name;
-        this.location = location; 
+         
         this.useLocation = useLocation;
     }
     
