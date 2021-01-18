@@ -222,6 +222,7 @@ public class Game
     private void map()
     {
         System.out.println();
+        textSpeed.slowText("            ");
         System.out.println("     __________Map___________");
         System.out.println("     ░░░░░░░░░░░░░░░░░░░░");
         System.out.println("     ░┌──┐░░┌────┐░░┌──┐░");
