@@ -22,4 +22,11 @@ public class Player
         inventory = new HashMap<String, Item>();
     }
 
+    /**
+     * adds an item to the inventory
+     */
+    public void addInventory(Item item)
+    {
+        inventory.put(item.getName(), item);
+    }
 }

@@ -43,6 +43,14 @@ public class Item
     }
     
     /**
+     * gets the name of the item
+     */
+    public String getName()
+    {
+        return this.name;
+    }
+    
+    /**
      * checks it the current room is the one is associated with
      * 
      */
@@ -53,8 +61,4 @@ public class Item
         }
         else return false;
     }
-    
-    
-
-    
 }

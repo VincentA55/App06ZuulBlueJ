@@ -47,20 +47,21 @@ public class Room
 
     /**
      * prints out the items within the room
-     *
+     */
     public void printItems()
     {
-    for (Item item : itemsInRoom){
-    return item.getDescription();
+        Iterator<HashMap.Entry<String,Item>> it = itemsInRoom.entrySet().iterator();
+        for (HashMap.Entry<String, Item> items : itemsInRoom.entrySet()){
+            System.out.println(items.getKey());
+        }
     }
-    }
-    /
 
     /**
      * Define an exit from this room.
      * @param direction The direction of the exit.
      * @param neighbor  The room to which the exit leads.
      */
+
     public void setExit(String direction, Room neighbor) 
     {
         exits.put(direction, neighbor);

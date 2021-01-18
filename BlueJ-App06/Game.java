@@ -111,7 +111,7 @@ public class Game
             break;
 
             case LOOK:
-            //look();
+            look();
             break;
 
             case QUIT:
@@ -191,13 +191,12 @@ public class Game
     /**
      * checks the room for items and returns the description if 
      * there is an item
-     *
+    */
     public void look()
     {
-        if (room.itemsInRoom
+        currentRoom.printItems();
     }
-    /
-
+    
     /**
      * 
      * place holder for map item
