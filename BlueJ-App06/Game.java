@@ -120,7 +120,7 @@ public class Game
             case USE: //testing 
             map();
             break;
-            
+
             case TAKE:
             takeItem();
             break;
@@ -202,36 +202,39 @@ public class Game
     {
         return currentRoom;
     }
-    
+
     /**
      * adds an item to the players inventory
      */
     public void takeItem()
     {
-       this.player.inventory.putAll(currentRoom.itemsInRoom);
-      
-       Collection<Item> items = currentRoom.itemsInRoom.values();
+        this.player.inventory.putAll(currentRoom.itemsInRoom);
 
-        for (Item item : items)
-        {
-            currentRoom.itemsInRoom.get(item);
-            String things = (item.getName() + " added to inventory");
-            
+        Collection<Item> items = currentRoom.itemsInRoom.values();
+        if(items.isEmpty()){
+            System.out.println("There is nothing here to take!"); 
         }
-        System.out.println(player.inventory);
+        else{
+            for (Item item : items)
+            {
+                currentRoom.itemsInRoom.get(item);
+                String things = (item.getName() + " added to inventory");
+                System.out.println(things);
+            }
+            currentRoom.itemsInRoom.clear();
+            System.out.println(player.inventory);
+        }
     }
-        
-    
-    
+
     /**
      * checks the room for items and returns the description if 
      * there is an item
-    */
+     */
     public void look()
     {
         currentRoom.printItems();
     }
-    
+
     /**
      * 
      * place holder for map item
