@@ -62,13 +62,14 @@ public class Room
         {
             itemsInRoom.get(item);
             String things = (item.getName() + ": " + item.getDescription());
-            System.out.println(returnString);
+            textSpeed.superFastText(returnString);
+            System.out.println(" ");
             textSpeed.fastText(things);
             empty = false;
             break;
         }
         if (empty){
-            System.out.println (returnString + noItems);
+            textSpeed.superFastText(returnString + noItems);
         }
     }
 

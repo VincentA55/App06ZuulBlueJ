@@ -24,7 +24,7 @@ public class TextSpeed
         }
         System.out.println("");
     }
-    
+
     /**
      * prints out the text with 40ms dely
      */
@@ -42,7 +42,7 @@ public class TextSpeed
         }
         System.out.println("");
     }
-    
+
     /**
      * prints out the text with a 300ms dely
      */
@@ -53,6 +53,24 @@ public class TextSpeed
             System.out.print(input.charAt(index));
             try {
                 Thread.sleep(300);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("");
+    }
+
+    /**
+     * prints out the text with 20ms dely
+     */
+    public void superFastText(String input)
+    {
+        for (int index = 0; index < input.length(); index++) 
+        {
+            System.out.print(input.charAt(index));
+            try {
+                Thread.sleep(20);
             }
             catch (Exception e) {
                 e.printStackTrace();
