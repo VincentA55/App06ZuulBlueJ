@@ -47,7 +47,15 @@ public class Room
     {
         itemsInRoom.put(name, itemInRoom);
     }
-
+ 
+    /**
+     * set the descripiton of the room
+     */
+    public void setDescription(String description)
+    {
+        this.description = description;
+    }
+    
     /**
      * prints out the items within the room
      */
@@ -63,7 +71,6 @@ public class Room
             itemsInRoom.get(item);
             String things = (item.getName() + ": " + item.getDescription());
             textSpeed.superFastText(returnString);
-            System.out.println(" ");
             textSpeed.fastText(things);
             empty = false;
             break;

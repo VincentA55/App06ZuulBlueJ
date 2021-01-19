@@ -77,10 +77,15 @@ public class Game
         textSpeed.slowText("Welcome to the World of Zuul inspired text based adventure game!");
         textSpeed.slowText("World of Vuul is a new, incredibly boring adventure game.");
         textSpeed.slowText("You awaken in your childhood home, you have coursework due, girl troubles, and no friends");
-        textSpeed.slowText("But most importantly, you have an empty stomach.");
-        textSpeed.fastText("Time for breakfast");
+        textSpeed.slowText("But more importantly, you have an empty stomach.");
+        textSpeed.slowText("Time for breakfast");
         System.out.println();
-        textSpeed.fastText("Make your way to the kitchen and make something to eat");
+        textSpeed.fastText("Make your way to the kitchen and get something to eat");
+        textSpeed.fastText("Fill your energy up to 100%, and you will be ready for the day ahead");
+        textSpeed.fastText("Dont let it reach 0!, or youll pass out and die.");
+        textSpeed.fastText("No pressure! Good luck!");
+        System.out.println();
+        textSpeed.slowText("Tip: dont forget to `look´ around each room");
         textSpeed.fastText("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println();
         textSpeed.fastText(currentRoom.getLongDescription());
