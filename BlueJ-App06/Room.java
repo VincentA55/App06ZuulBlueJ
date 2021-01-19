@@ -57,6 +57,14 @@ public class Room
     }
     
     /**
+     * add the item in the room to the players inventory
+     */
+    public HashMap getItemsInRoom()
+    {
+        return itemsInRoom;
+    }
+    
+    /**
      * prints out the items within the room
      */
     public void printItems()

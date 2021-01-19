@@ -27,9 +27,9 @@ public class Game
     private Room currentRoom;
     private Map map;
     private Player player;
-    
+
     private TextSpeed textSpeed;
-    
+
     /**
      * Create the game and initialise its internal map.
      */
@@ -121,7 +121,7 @@ public class Game
             break;
             
             case TAKE:
-            takeItem(command);
+            takeItem();
             break;
 
             case LOOK:
@@ -205,12 +205,11 @@ public class Game
     /**
      * adds an item to the players inventory
      */
-    public void takeItem(Command command)
+    public void takeItem()
     {
-        String desiredItem = command.getSecondWord();
-        
-        
-        }
+       
+      
+    }
         
     
     

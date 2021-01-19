@@ -68,10 +68,6 @@ public class Map
         
 
         this.currentRoom = bedroom;  // start game in bedroom
-        
-        
-       
+     
     }
-
-    
 }

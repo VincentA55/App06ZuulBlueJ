@@ -25,8 +25,8 @@ public class Player
     /**
      * adds an item to the inventory
      */
-    public void addInventory(Item item)
+    public void addInventory()
     {
-        inventory.put(item.getName(), item);
+        
     }
 }
