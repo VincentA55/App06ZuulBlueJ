@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Collection; 
 /**
  * A player class that represents the user
  * it contains the players Energy, inventory, and location
@@ -23,10 +24,30 @@ public class Player
     }
 
     /**
-     * adds an item to the inventory
+     * gets the players current energy level
      */
-    public void addInventory()
+    public int getEnergy()
     {
-        
+        return energy;
     }
+
+    /**
+     * gets the players inventory
+     */
+    public String getInventory()
+    {
+        Collection<Item> items = inventory.values();
+        String inventoryList = null;
+        if (inventory.isEmpty()){
+            inventoryList = "empty";
+        }
+        else {
+        for (Item item : items){
+            inventoryList += (" , " + item.getName());
+        }
+        }
+        return inventoryList;
+    }
+
 }
+

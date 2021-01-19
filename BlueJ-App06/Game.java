@@ -89,6 +89,7 @@ public class Game
         textSpeed.slowText("Tip: dont forget to `look´ around each room");
         textSpeed.fastText("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println();
+        printStats();
         textSpeed.fastText(currentRoom.getLongDescription());
     }
 
@@ -127,6 +128,10 @@ public class Game
 
             case LOOK:
             look();
+            break;
+            
+            case STATS:
+            printStats();
             break;
 
             case QUIT:
@@ -222,7 +227,6 @@ public class Game
                 System.out.println(things);
             }
             currentRoom.itemsInRoom.clear();
-            System.out.println(player.inventory);
         }
     }
 
@@ -235,6 +239,15 @@ public class Game
         currentRoom.printItems();
     }
 
+    /**
+     * prints out the players current stats and items
+     */
+    public void printStats()
+    {
+    System.out.println("Energy lvl : " + player.getEnergy());
+    System.out.println("Inventory : " + player.getInventory());
+    }
+    
     /**
      * 
      * place holder for map item
