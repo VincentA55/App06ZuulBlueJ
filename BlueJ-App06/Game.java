@@ -40,6 +40,7 @@ public class Game
         this.currentRoom = map.currentRoom;
         parser = new Parser();
         textSpeed = new TextSpeed();
+        player = new Player();
     }
 
     /**
@@ -202,9 +203,11 @@ public class Game
     public void takeItem(Command command)
     {
         String desiredItem = command.getSecondWord();
-        Item tempItem;
         
-    }
+        
+        }
+        
+    
     
     /**
      * checks the room for items and returns the description if 

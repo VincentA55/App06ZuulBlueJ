@@ -1,6 +1,7 @@
 import java.util.Set;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Collection;
 
 /**
  * Class Room - a room in an adventure game.
@@ -19,6 +20,7 @@ import java.util.Iterator;
 
 public class Room 
 {
+    private TextSpeed textSpeed;
     private String name;
     private String description;
     private HashMap<String, Room> exits;        // stores exits of this room.
@@ -35,6 +37,7 @@ public class Room
         this.description = description;
         exits = new HashMap<>();
         itemsInRoom = new HashMap<>();
+        textSpeed = new TextSpeed();
     }
 
     /**
@@ -50,12 +53,24 @@ public class Room
      */
     public void printItems()
     {
-        Iterator<HashMap.Entry<String,Item>> it = itemsInRoom.entrySet().iterator();
-        for (HashMap.Entry<String, Item> items : itemsInRoom.entrySet()){
-            String item = items.getKey();
-            System.out.println(item);
+        String returnString = "Items in the room: ";
+        String noItems = "No items in this room!";
+        Collection<Item> items = itemsInRoom.values();
+
+        for (Item item : items)
+        {
+            itemsInRoom.get(item);
+            String things = (item.getName() + ": " + item.getDescription());
+            System.out.println(returnString);
+            textSpeed.fastText(things);
         }
-    }
+       
+        
+        
+       
+        }
+
+    
 
     /**
      * Define an exit from this room.

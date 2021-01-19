@@ -51,6 +51,14 @@ public class Item
     }
     
     /**
+     * Returns the item as a string
+     */
+    public String intoString()
+    {
+        return (name + " " + description);
+    }
+    
+    /**
      * checks it the current room is the one is associated with
      * 
      */
