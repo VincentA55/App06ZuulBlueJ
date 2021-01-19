@@ -53,9 +53,10 @@ public class Room
      */
     public void printItems()
     {
-        String returnString = "Items in the room: ";
-        String noItems = "No items in this room!";
+        String returnString = "You look around and see ";
+        String noItems = "nothing of interest";
         Collection<Item> items = itemsInRoom.values();
+        Boolean empty = true;
 
         for (Item item : items)
         {
@@ -63,14 +64,13 @@ public class Room
             String things = (item.getName() + ": " + item.getDescription());
             System.out.println(returnString);
             textSpeed.fastText(things);
+            empty = false;
+            break;
         }
-       
-        
-        
-       
+        if (empty){
+            System.out.println (returnString + noItems);
         }
-
-    
+    }
 
     /**
      * Define an exit from this room.
