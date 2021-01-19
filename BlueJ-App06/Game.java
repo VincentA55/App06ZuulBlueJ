@@ -1,6 +1,7 @@
 import java.util.Set;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Collection;
 
 /**
  *  This class is the main class of the "World of Zuul" application. 
@@ -207,8 +208,17 @@ public class Game
      */
     public void takeItem()
     {
-       
+       this.player.inventory.putAll(currentRoom.itemsInRoom);
       
+       Collection<Item> items = currentRoom.itemsInRoom.values();
+
+        for (Item item : items)
+        {
+            currentRoom.itemsInRoom.get(item);
+            String things = (item.getName() + " added to inventory");
+            
+        }
+        System.out.println(player.inventory);
     }
         
     

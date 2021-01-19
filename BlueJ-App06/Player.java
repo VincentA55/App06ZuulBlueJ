@@ -10,7 +10,7 @@ public class Player
 {
     private int energy;
 
-    private HashMap<String, Item> inventory;
+    public HashMap<String, Item> inventory;
 
     /**
      * Constructor for objects of class Player
