@@ -244,7 +244,8 @@ public class Game
      */
     public void printStats()
     {
-    System.out.println("Energy lvl : " + player.getEnergy());
+    System.out.println(" ");
+    System.out.println("Energy lvl [ " + player.getEnergy() + " ]");
     System.out.println("Inventory : " + player.getInventory());
     }
     
@@ -257,23 +258,23 @@ public class Game
         System.out.println();
         textSpeed.slowText("            ");
         System.out.println("     __________Map___________");
-        System.out.println("     ░░░░░░░░░░░░░░░░░░░░");
-        System.out.println("     ░┌──┐░░┌────┐░░┌──┐░");
-        System.out.println("     ░│░░├──┤░░░░├──┤░░│░");
-        System.out.println("     ░└──┘░░└─┬┬─┘░░└──┘░");
-        System.out.println("     ░░░░░░░░░││░░░░░░░░░");
-        System.out.println("     ░┌──┐░░┌─┴┴─┐░░░░░░░");
-        System.out.println("     ░│░░├──┤░░░░│░░░░░░░");
-        System.out.println("     ░└──┘░░└─┬┬─┘░░ N ░░");
-        System.out.println("     ░░░░░░░░░││░░░W * E ░");
-        System.out.println("     ░░░░░░░┌─┴┴─┐░░ S ░░");
-        System.out.println("     ░░░░░░░│░░░░│░░░░░░░");
-        System.out.println("     ░░░░░░░└─┬┬─┘░░░░░░░");
-        System.out.println("     ░░░░░░░░░││░░░░░░░░░");
-        System.out.println("     ░░░░░░░┌─┴┴─┐░░┌──┐░");
-        System.out.println("     ░░░░░░░│░░░░├──┤░░│░");
-        System.out.println("     ░░░░░░░└────┘░░└──┘░");
-        System.out.println("     ░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("     ┌─────┐░░┌──────┐░░┌──────┐░");
+        System.out.println("     │fridge├──┤kitchen├──┤outside│░");
+        System.out.println("     └─────┘░░└─┬┬───┘░░└──────┘░");
+        System.out.println("     ░░░░░░░░░░░││░░░░░░░░░░░░░░░");
+        System.out.println("     ░┌────┐░░┌─┴┴─┐░░░░░░░░░░░░░");
+        System.out.println("     ░│Spare├──┤░░░░│░░░░░░░░░░░░░");
+        System.out.println("     ░│room │░░└─┬┬─┘░░░░░░░░ N ░░");
+        System.out.println("     ░└────┘░░░░││░░░░░░░░░W * E ░");
+        System.out.println("     ░░░░░░░░░┌─┴┴─┐░░░░░░░░ S ░░");
+        System.out.println("     ░░░░░░░░░│░░░░│░░░░░░░░░░░░░");
+        System.out.println("     ░░░░░░░░░└─┬┬─┘░░░░░░░░░░░░░");
+        System.out.println("     ░░░░░░░░░░░││░░░░░░░░░░░░░░░");
+        System.out.println("     ░░░░░░░░░┌─┴┴───┐░░┌───────┐");
+        System.out.println("     ░░░░░░░░░│bedroom├──┤bathroom│");
+        System.out.println("     ░░░░░░░░░└──────┘░░└───────┘");
+        System.out.println("     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
 
     }
 }
