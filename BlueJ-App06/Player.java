@@ -46,12 +46,24 @@ public class Player
     }
 
     /**
+     * only checks if energy falls below 0
+     */
+    public boolean checkEnergy(){
+         if (this.energy < 1){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    
+    /**
      * gets the players inventory
      */
     public String getInventory()
     {
         Collection<Item> items = inventory.values();
-        String inventoryList = null;
+        String inventoryList = " ";
         if (inventory.isEmpty()){
             inventoryList = "empty";
         }
@@ -63,5 +75,12 @@ public class Player
         return inventoryList;
     }
 
+    /**
+     * Uses the item
+     */
+    private void useItem()
+    {
+       
+    }
 }
 

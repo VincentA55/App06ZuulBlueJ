@@ -1,3 +1,4 @@
+
 import java.util.Set;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -28,7 +29,7 @@ public class Game
     private Room currentRoom;
     private Map map;
     private Player player;
-
+    private boolean gameOver;
     private TextSpeed textSpeed;
 
     /**
@@ -42,6 +43,7 @@ public class Game
         parser = new Parser();
         textSpeed = new TextSpeed();
         player = new Player();
+        gameOver = false;
     }
 
     /**
@@ -58,8 +60,14 @@ public class Game
 
         while (! finished) 
         {
-            Command command = parser.getCommand();
-            finished = processCommand(command);
+            if(!player.checkEnergy()){
+                Command command = parser.getCommand();
+                finished = processCommand(command);
+            }
+            else{
+                textSpeed.fastText("You have run out of enery and passed out!");
+                finished = true;
+            }
         }
 
         textSpeed.fastText("Thank you for playing.  Good bye.");
@@ -98,7 +106,7 @@ public class Game
     /**
      * Given a command, process (that is: execute) the command.
      * @param command The command to be processed.
-     * @return true If the command ends the game, false otherwise.
+     * @return true If the command ends the game,or the player reacher 0 energy,  false otherwise.
      */
     private boolean processCommand(Command command) 
     {
@@ -121,7 +129,7 @@ public class Game
             break;
 
             case USE: //testing 
-            map();
+            useItem(command);
             break;
 
             case TAKE:
@@ -131,7 +139,7 @@ public class Game
             case LOOK:
             look();
             break;
-            
+
             case STATS:
             printStats();
             break;
@@ -182,7 +190,7 @@ public class Game
         }
         else {
             currentRoom = nextRoom;
-            player.drainEnergy();
+            this.gameOver = player.drainEnergy();
             textSpeed.fastText(currentRoom.getLongDescription());
         }
     }
@@ -243,16 +251,31 @@ public class Game
     }
 
     /**
+     * Uses the item
+     */
+    private void useItem(Command command)
+    {
+       Collection<Item>items = player.inventory.values();
+       
+       for (Item item : items){
+           if (item.checkIfRightRoom(currentRoom))
+           {
+            
+            }
+        }
+    }
+    
+    /**
      * prints out the players current stats and items
      */
     public void printStats()
     {
-    System.out.println(" ");
-    System.out.println("Energy : " + player.getEnergy() + "/100");
-    System.out.println("Inventory : " + player.getInventory());
-    System.out.println(" ");
+        System.out.println(" ");
+        System.out.println("Energy : " + player.getEnergy() + "/100");
+        System.out.println("Inventory : " + player.getInventory());
+        System.out.println(" ");
     }
-    
+
     /**
      * 
      * place holder for map item

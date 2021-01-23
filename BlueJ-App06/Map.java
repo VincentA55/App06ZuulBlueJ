@@ -29,7 +29,7 @@ public class Map
         outside = new Room("Outside", "the outside world, breathe it in");
         
         
-        Item toiletPaper, milk, spoon;// creates the items and sets their room
+        Item toiletPaper, milk, spoon, poison;// creates the items and sets their room
         
         toiletPaper = new Item("Toilet Paper", hallway1);
         toiletPaper.setDescription("Just your standard bog roll. Dont let your dog get a hold of it");
@@ -42,6 +42,10 @@ public class Map
         spoon = new Item("Spoon", kitchen);
         spoon.setDescription("Like a fork but for liquids");
         spareroom.setItems("Spoon", spoon);
+        
+        poison = new Item("Poison", outside);
+        poison.setDescription("This will probably drain all of your energy, dont USE it");
+        outside.setItems("Poison", poison);
         
         // initialise room exits
         bedroom.setExit("east", bathroom);

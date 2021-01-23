@@ -62,9 +62,9 @@ public class Item
      * checks it the current room is the one is associated with
      * 
      */
-    public boolean checkIfRightRoom()
+    public boolean checkIfRightRoom(Room currentRoom)
     {
-        if (game.getCurrentRoom() == useLocation){
+        if (currentRoom == useLocation){
         return true;
         }
         else return false;
