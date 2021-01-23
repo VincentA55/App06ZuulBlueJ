@@ -31,6 +31,7 @@ public class Game
     private Player player;
     private boolean gameOver;
     private TextSpeed textSpeed;
+    private WinCondition winCondition;
 
     /**
      * Create the game and initialise its internal map.
@@ -43,6 +44,7 @@ public class Game
         parser = new Parser();
         textSpeed = new TextSpeed();
         player = new Player();
+        winCondition = new WinCondition();
         gameOver = false;
     }
 
@@ -251,23 +253,17 @@ public class Game
     }
 
     /**
-     * Uses the item
+     * Uses the item testing
      */
     private void useItem(Command command)
     {
-        Collection<Item>items = player.inventory.values();
-        String itemName = command.getSecondWord();
-        for (Item item : items){
-            if(item.getName() == itemName){
-                if (item.checkIfRightRoom(currentRoom))
-                {   
-                    System.out.print("Correct room");
-                }
-                else {
-                    System.out.println("Wrong room");
-                }
-            }
-        }
+        
+        //WinCondition winCondition = command.getSecondWord();
+        
+        //switch (WinCondition)
+        {
+        
+        } 
     }
 
     /**
