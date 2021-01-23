@@ -255,16 +255,21 @@ public class Game
      */
     private void useItem(Command command)
     {
-       Collection<Item>items = player.inventory.values();
-       
-       for (Item item : items){
-           if (item.checkIfRightRoom(currentRoom))
-           {
-            
+        Collection<Item>items = player.inventory.values();
+        String itemName = command.getSecondWord();
+        for (Item item : items){
+            if(item.getName() == itemName){
+                if (item.checkIfRightRoom(currentRoom))
+                {   
+                    System.out.print("Correct room");
+                }
+                else {
+                    System.out.println("Wrong room");
+                }
             }
         }
     }
-    
+
     /**
      * prints out the players current stats and items
      */
