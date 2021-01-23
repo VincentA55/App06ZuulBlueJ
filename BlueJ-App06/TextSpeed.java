@@ -62,7 +62,7 @@ public class TextSpeed
     }
 
     /**
-     * prints out the text with 20ms dely
+     * prints out the text with 10ms dely
      */
     public void superFastText(String input)
     {
@@ -70,7 +70,7 @@ public class TextSpeed
         {
             System.out.print(input.charAt(index));
             try {
-                Thread.sleep(20);
+                Thread.sleep(5);
             }
             catch (Exception e) {
                 e.printStackTrace();

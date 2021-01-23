@@ -24,7 +24,7 @@ public class Map
         hallway1 = new Room("Hallway1", "the hallway outside your room, there is a dog here blocking your path. Youll need to USE something to distract him");
         hallway2 = new Room("Hallway2", "the same hallway? This part leads to the spare room and kitchen");
         spareroom = new Room("Spare room", "the spare room. This is for guests");
-        kitchen = new Room("Kitchen", "your kitchen. There is a bowl with cereal in it waiting for you, I bet that would  But its still missing some things");
+        kitchen = new Room("Kitchen", "your kitchen. There is a bowl with cereal in it waiting for you,But its still missing some things");
         fridge = new Room ("Walk in Fridge", "a walkin fridge. Have you ever seen Ratatouille? Its like that");
         outside = new Room("Outside", "the outside world, breathe it in");
         

@@ -32,6 +32,20 @@ public class Player
     }
 
     /**
+     * drains the payers energy by 1 and checks if it falls below 0
+     */
+    public boolean drainEnergy()
+    {
+        energy -= 1;
+        if (this.energy < 1){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    /**
      * gets the players inventory
      */
     public String getInventory()
@@ -42,9 +56,9 @@ public class Player
             inventoryList = "empty";
         }
         else {
-        for (Item item : items){
-            inventoryList += (" , " + item.getName());
-        }
+            for (Item item : items){
+                inventoryList += (" , " + item.getName());
+            }
         }
         return inventoryList;
     }

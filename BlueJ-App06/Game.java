@@ -81,6 +81,8 @@ public class Game
         textSpeed.slowText("But more importantly, you have an empty stomach.");
         textSpeed.slowText("Time for breakfast");
         System.out.println();
+        map();
+        System.out.println();
         textSpeed.fastText("Make your way to the kitchen and get something to eat");
         textSpeed.fastText("Fill your energy up to 100%, and you will be ready for the day ahead");
         textSpeed.fastText("Dont let it reach 0!, or youll pass out and die.");
@@ -176,10 +178,11 @@ public class Game
         Room nextRoom = currentRoom.getExit(direction);
 
         if (nextRoom == null) {
-            System.out.println("There is no door!");
+            System.out.println("You can not go that way!");
         }
         else {
             currentRoom = nextRoom;
+            player.drainEnergy();
             textSpeed.fastText(currentRoom.getLongDescription());
         }
     }
@@ -245,8 +248,9 @@ public class Game
     public void printStats()
     {
     System.out.println(" ");
-    System.out.println("Energy lvl [ " + player.getEnergy() + " ]");
+    System.out.println("Energy : " + player.getEnergy() + "/100");
     System.out.println("Inventory : " + player.getInventory());
+    System.out.println(" ");
     }
     
     /**
@@ -256,25 +260,23 @@ public class Game
     private void map()
     {
         System.out.println();
-        textSpeed.slowText("            ");
-        System.out.println("     __________Map___________");
-        System.out.println("     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-        System.out.println("     ┌─────┐░░┌──────┐░░┌──────┐░");
-        System.out.println("     │fridge├──┤kitchen├──┤outside│░");
-        System.out.println("     └─────┘░░└─┬┬───┘░░└──────┘░");
-        System.out.println("     ░░░░░░░░░░░││░░░░░░░░░░░░░░░");
-        System.out.println("     ░┌────┐░░┌─┴┴─┐░░░░░░░░░░░░░");
-        System.out.println("     ░│Spare├──┤░░░░│░░░░░░░░░░░░░");
-        System.out.println("     ░│room │░░└─┬┬─┘░░░░░░░░ N ░░");
-        System.out.println("     ░└────┘░░░░││░░░░░░░░░W * E ░");
-        System.out.println("     ░░░░░░░░░┌─┴┴─┐░░░░░░░░ S ░░");
-        System.out.println("     ░░░░░░░░░│░░░░│░░░░░░░░░░░░░");
-        System.out.println("     ░░░░░░░░░└─┬┬─┘░░░░░░░░░░░░░");
-        System.out.println("     ░░░░░░░░░░░││░░░░░░░░░░░░░░░");
-        System.out.println("     ░░░░░░░░░┌─┴┴───┐░░┌───────┐");
-        System.out.println("     ░░░░░░░░░│bedroom├──┤bathroom│");
-        System.out.println("     ░░░░░░░░░└──────┘░░└───────┘");
-        System.out.println("     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-
+        System.out.println("     ________________Map______________");
+        textSpeed.superFastText("     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+        textSpeed.superFastText("     ┌─────┐░░┌──────┐░░┌──────┐░");
+        textSpeed.superFastText("     │fridge├──┤kitchen├──┤outside│░");
+        textSpeed.superFastText("     └─────┘░░└─┬┬───┘░░└──────┘░");
+        textSpeed.superFastText("     ░░░░░░░░░░░││░░░░░░░░░░░░░░░");
+        textSpeed.superFastText("     ░┌────┐░░┌─┴┴─┐░░░░░░░░░░░░░");
+        textSpeed.superFastText("     ░│Spare├──┤░░░░│░░░░░░░░░░░░░");
+        textSpeed.superFastText("     ░│room │░░└─┬┬─┘░░░░░░░░ N ░░");
+        textSpeed.superFastText("     ░└────┘░░░░││░░░░░░░░░W * E ░");
+        textSpeed.superFastText("     ░░░░░░░░░┌─┴┴─┐░░░░░░░░ S ░░");
+        textSpeed.superFastText("     ░░░░░░░░░│░░░░│░░░░░░░░░░░░░");
+        textSpeed.superFastText("     ░░░░░░░░░└─┬┬─┘░░░░░░░░░░░░░");
+        textSpeed.superFastText("     ░░░░░░░░░░░││░░░░░░░░░░░░░░░");
+        textSpeed.superFastText("     ░░░░░░░░░┌─┴┴───┐░░┌───────┐");
+        textSpeed.superFastText("     ░░░░░░░░░│bedroom├──┤bathroom│");
+        textSpeed.superFastText("     ░░░░░░░░░└──────┘░░└───────┘");
+        textSpeed.superFastText("     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
     }
 }
