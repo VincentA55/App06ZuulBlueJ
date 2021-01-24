@@ -258,12 +258,8 @@ public class Game
     private void useItem(Command command)
     {
         
-        //WinCondition winCondition = command.getSecondWord();
+        String itemName = command.getSecondWord();
         
-        //switch (WinCondition)
-        {
-        
-        } 
     }
 
     /**
