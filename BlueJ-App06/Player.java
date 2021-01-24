@@ -13,6 +13,7 @@ public class Player
 
     public HashMap<String, Item> inventory;
 
+    private String inventoryList;
     /**
      * Constructor for objects of class Player
      */
@@ -49,30 +50,28 @@ public class Player
      * only checks if energy falls below 0
      */
     public boolean checkEnergy(){
-         if (this.energy < 1){
+        if (this.energy < 1){
             return true;
         }
         else {
             return false;
         }
     }
-    
+
     /**
      * gets the players inventory
      */
     public String getInventory()
     {
+
         Collection<Item> items = inventory.values();
-        String inventoryList = " ";
-        if (inventory.isEmpty()){
-            inventoryList = "empty";
+
+        for (Item item : items){
+            inventoryList += (" , " + item.getName());
         }
-        else {
-            for (Item item : items){
-                inventoryList += (" , " + item.getName());
-            }
-        }
+        items.clear();
         return inventoryList;
+
     }
 
     /**
@@ -80,7 +79,7 @@ public class Player
      */
     private void useItem()
     {
-       
+
     }
 }
 

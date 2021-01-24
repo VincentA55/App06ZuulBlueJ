@@ -261,24 +261,34 @@ public class Game
         String itemName = command.getSecondWord();
 
         Collection<Item> heldItems = player.inventory.values();
-        
+
+        boolean finished = false;
+
         for (Item item : heldItems){
-            if (itemName.matches(item.getName())){
-                if (item.checkIfRightRoom(currentRoom) == true){
-                    System.out.println(item.getName() + " has been used");
+            while (finished == false){
+                if (itemName != null && itemName.equals(item.getName())){
+                    if (item.checkIfRightRoom(currentRoom) == true){
+                        System.out.println(item.getName() + " has been used");
+                        player.inventory.remove(item);
+                        finished = true;
+                        break;
+                    }
+                    else if (item.checkIfRightRoom(currentRoom) == false){
+                        System.out.println(item.getName() + " cant be used here!");
+                        finished = true;
+                        break;
+                    }
+                }
+                else
+                {
+                    System.out.println("Use what?");
+                    finished = true;
                     break;
                 }
-                else if (item.checkIfRightRoom(currentRoom) == false){
-                 System.out.println(item.getName() + " cant be used here!");
-                 break;
-                }
             }
-            else if (itemName == null)
-            {
-                System.out.println("Use what?");
-            }
-
+            break;
         }
+        heldItems.clear();
     }
 
     /**
