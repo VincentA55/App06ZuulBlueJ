@@ -257,9 +257,14 @@ public class Game
      */
     private void useItem(Command command)
     {
-        
         String itemName = command.getSecondWord();
-        
+
+        Collection<Item> heldItems = player.inventory.values();
+        for (Item item : heldItems){
+            if (item.checkIfRightRoom(currentRoom) == true){
+                System.out.println(item.getName() + " has been used");
+            }
+        }
     }
 
     /**
