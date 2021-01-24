@@ -253,17 +253,31 @@ public class Game
     }
 
     /**
-     * Uses the item testing
+     * checks if the item name matches the input
+     * then if it does, then it checks if the room matches its "use room"
      */
     private void useItem(Command command)
     {
         String itemName = command.getSecondWord();
 
         Collection<Item> heldItems = player.inventory.values();
+        
         for (Item item : heldItems){
-            if (item.checkIfRightRoom(currentRoom) == true){
-                System.out.println(item.getName() + " has been used");
+            if (itemName.matches(item.getName())){
+                if (item.checkIfRightRoom(currentRoom) == true){
+                    System.out.println(item.getName() + " has been used");
+                    break;
+                }
+                else if (item.checkIfRightRoom(currentRoom) == false){
+                 System.out.println(item.getName() + " cant be used here!");
+                 break;
+                }
             }
+            else if (itemName == null)
+            {
+                System.out.println("Use what?");
+            }
+
         }
     }
 
