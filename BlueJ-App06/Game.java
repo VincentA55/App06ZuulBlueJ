@@ -62,9 +62,14 @@ public class Game
 
         while (! finished) 
         {
-            if(!player.checkEnergy()){
+            if(!player.checkEnergy() && player.getEnergy() < 1 ){
                 Command command = parser.getCommand();
                 finished = processCommand(command);
+            }
+            else if(!player.checkEnergy() && player.getEnergy() > 99){
+                textSpeed.fastText("You have filled your stomach and are ready for the day ahead!");
+                textSpeed.fastText("Congratulations, you are Win!");
+                finished = true;
             }
             else{
                 textSpeed.fastText("You have run out of enery and passed out!");
@@ -269,7 +274,25 @@ public class Game
                 if (itemName != null && itemName.equals(item.getName())){
                     if (item.checkIfRightRoom(currentRoom) == true){
                         System.out.println(item.getName() + " has been used");
-                        player.inventory.remove(item.getName());
+
+                        if(item.getName().equals("Toilet-Paper")){
+                            System.out.println("The dog grabs the Toilet-Paper and goes crazy, lucky it didnt grab you");
+                            System.out.println("You may now pass safely");
+                            player.inventory.remove("Toilet-Paper");
+                        }
+                        if(item.getName().equals("Spoon")){
+                            System.out.println("You out the Spoon in the bowl");
+                            player.inventory.remove("Spoon");
+                        }
+                        if(item.getName().equals("Milk")){
+                            System.out.println("You pour the Milk into the bowl");
+                            player.inventory.remove("Milk");
+                        }
+                        if(item.getName().equals("Poison")){
+                            System.out.println("You ingest the Poison and die!");
+                            player.kill();
+
+                        }
                         finished = true;
                         break;
                     }
@@ -288,7 +311,7 @@ public class Game
             }
             break;
         }
-        
+
     }
 
     /**

@@ -73,11 +73,19 @@ public class Player
     }
 
     /**
-     * Uses the item
+     * kills the player by draining their energy past 0
      */
-    private void useItem()
+    public void kill()
     {
-
+        this.energy = energy - 101;
+    }
+    
+    /**
+     * wins the game by increasing the energy to 100
+     */
+    public void win()
+    {
+    this.energy = 100;
     }
 }
 

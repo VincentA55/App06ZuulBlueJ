@@ -53,7 +53,7 @@ public class Map
         
         bathroom.setExit("west", bedroom);
         
-        hallway1.setExit("south", bedroom);
+        hallway1.setExit("south", bedroom);//
         hallway1.setExit("north", hallway2);
         
         hallway2.setExit("south", hallway1);
