@@ -269,7 +269,7 @@ public class Game
                 if (itemName != null && itemName.equals(item.getName())){
                     if (item.checkIfRightRoom(currentRoom) == true){
                         System.out.println(item.getName() + " has been used");
-                        player.inventory.remove(item);
+                        player.inventory.remove(item.getName());
                         finished = true;
                         break;
                     }
@@ -288,7 +288,7 @@ public class Game
             }
             break;
         }
-        heldItems.clear();
+        
     }
 
     /**

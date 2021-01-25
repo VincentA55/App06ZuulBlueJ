@@ -63,15 +63,13 @@ public class Player
      */
     public String getInventory()
     {
-
         Collection<Item> items = inventory.values();
 
         for (Item item : items){
             inventoryList += (" , " + item.getName());
         }
-        items.clear();
+        
         return inventoryList;
-
     }
 
     /**
