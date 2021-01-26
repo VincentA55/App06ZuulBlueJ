@@ -62,6 +62,8 @@ public class Game
         while (! finished) 
         {
             if(!player.checkEnergy() && player.getEnergy() > 99){
+                System.out.println(" ");
+                System.out.println(player.getEnergy());
                 textSpeed.fastText("You have filled your stomach and are ready for the day ahead!");
                 textSpeed.fastText("Congratulations, you are Win!");
                 finished = true;
