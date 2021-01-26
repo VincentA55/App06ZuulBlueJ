@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Collection; 
 /**
  * A player class that represents the user
- * it contains the players Energy, inventory, and location
+ * it contains the players Energy, inventory
  *
  * @author Vincent A.
  * @version 15/12/20
