@@ -31,7 +31,7 @@ public class Game
     private Player player;
     private boolean gameOver;
     private TextSpeed textSpeed;
-    private WinCondition winCondition;
+    private int winCondition;
 
     /**
      * Create the game and initialise its internal map.
@@ -44,7 +44,7 @@ public class Game
         parser = new Parser();
         textSpeed = new TextSpeed();
         player = new Player();
-        winCondition = new WinCondition();
+        winCondition = 0;
         gameOver = false;
     }
 
@@ -62,18 +62,18 @@ public class Game
 
         while (! finished) 
         {
-            if(!player.checkEnergy() && player.getEnergy() < 1 ){
-                Command command = parser.getCommand();
-                finished = processCommand(command);
-            }
-            else if(!player.checkEnergy() && player.getEnergy() > 99){
+            if(!player.checkEnergy() && player.getEnergy() > 99){
                 textSpeed.fastText("You have filled your stomach and are ready for the day ahead!");
                 textSpeed.fastText("Congratulations, you are Win!");
                 finished = true;
             }
-            else{
+            else if (player.getEnergy() < 1){
                 textSpeed.fastText("You have run out of enery and passed out!");
                 finished = true;
+            }
+            else {
+                Command command = parser.getCommand();
+                finished = processCommand(command);
             }
         }
 
@@ -281,17 +281,21 @@ public class Game
                             player.inventory.remove("Toilet-Paper");
                         }
                         if(item.getName().equals("Spoon")){
-                            System.out.println("You out the Spoon in the bowl");
+                            System.out.println("You put the Spoon in the bowl");
                             player.inventory.remove("Spoon");
+                            winCondition += 1;
                         }
                         if(item.getName().equals("Milk")){
                             System.out.println("You pour the Milk into the bowl");
                             player.inventory.remove("Milk");
+                            winCondition += 1;
                         }
                         if(item.getName().equals("Poison")){
                             System.out.println("You ingest the Poison and die!");
                             player.kill();
-
+                        }
+                        if (winCondition == 2){
+                            player.win();
                         }
                         finished = true;
                         break;
